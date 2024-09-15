@@ -153,12 +153,14 @@ async def post_register(
 ) -> schemas.RegisterOut:
     """Endpoint for create a user"""
     # path = await write_to_disk(user, file, static_path)
-    user = await db_utils.get_one(models.User, orm_session, api_key=register.api_key)
-    if user:
-        raise db_utils.CRUDException("User has already exist")
-    new_user = models.User(name=register.name, api_key=register.api_key)
-    pk = await db_utils.save(new_user, orm_session)
-    return schemas.RegisterOut(result=True)
+    try:
+        user = await db_utils.get_one(models.User, orm_session, api_key=register.api_key)
+        if user:
+            raise db_utils.CRUDException("User has already exist")
+    except db_utils.InstanceNotExists:
+        new_user = models.User(name=register.name, api_key=register.api_key)
+        pk = await db_utils.save(new_user, orm_session)
+        return schemas.RegisterOut(result=True)
 
 
 
