@@ -7,7 +7,7 @@ class APISettings(BaseSettings):
     database: str
     database_user: str
     database_password: str
-    debug: str = "0"
+    debug: bool = False
     database_url: str
 
 try:
@@ -18,7 +18,7 @@ except ValidationError:
 DATABASE = Settings.get("database")
 DATABASE_USER = Settings.get("database_user")
 DATABASE_PASSWORD = Settings.get("database_password")
-DEBUG = bool(int(Settings.get("debug")))
+DEBUG = Settings.get("debug")
 DATABASE_URL = Settings.get("database_url")
 
 if __name__ == '__main__':
