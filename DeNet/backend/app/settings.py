@@ -20,7 +20,3 @@ DATABASE_USER = Settings.get("database_user")
 DATABASE_PASSWORD = Settings.get("database_password")
 DEBUG = Settings.get("debug")
 DATABASE_URL = Settings.get("database_url")
-
-if __name__ == '__main__':
-    print(Settings)
-    print(DATABASE)
