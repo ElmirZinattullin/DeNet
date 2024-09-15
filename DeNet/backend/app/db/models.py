@@ -15,11 +15,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .database import Base
 
-# from sqlalchemy.orm import DeclarativeBase, sessionmaker
-#
-#
-# class Base(DeclarativeBase):
-#     pass
 
 
 class Cell(AsyncAttrs, Base):

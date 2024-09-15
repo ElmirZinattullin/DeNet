@@ -44,6 +44,8 @@ def ls():
             file_name = storage.get("name")
             pk = storage.get("id")
             click.echo(f"{number + 1}) ID={pk}, {file_name=} ")
+    else:
+        click.echo(f"You haven't had any storage yet ")
 
 
 @click.command()

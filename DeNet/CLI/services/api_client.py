@@ -219,19 +219,3 @@ class APIClient:
         if result != 201:
             raise APIClientException(f"The server rejected the request for registry. Probably wrong api-key")
         return result.json()
-
-
-
-if __name__ == '__main__':
-    client = APIClient(server="http://localhost", api_key="TEST4")
-    print(client.register("ELMIR-X"))
-    # print(client.storage_list())
-    client.upload_file("api_client.py")
-    # print(client.download(1, "s"))
-
-    # with open("music.mp3", "rb") as f1:
-    #     r1 = f1.read()
-    #     with open("s/music.mp3", "rb") as f2:
-    #         r2 = f2.read()
-    #     print(r1==r2)
-

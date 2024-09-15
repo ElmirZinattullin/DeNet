@@ -81,17 +81,3 @@ async def get_user_storage(
     """Получает список хранилища пользователя"""
     stmt = select(models.Storage).filter(models.Storage.user_id == user.id).order_by(models.Storage.id.desc())
     return await session.scalars(stmt)
-#
-#
-# async def delete_tweet(
-#     tweet_id: int, user: models.User, session: AsyncSession
-# ) -> None:
-#     """Удаляет твит по id, если user не является author
-#     то вызывает исключение"""
-#     tweet: models.Tweet = await get_by_id(models.Tweet, tweet_id, session)
-#     if not tweet:
-#         raise InstanceNotExists("Tweet does not exists")
-#     if user == tweet.author:
-#         await delete(tweet, session)
-#     else:
-#         raise CRUDException("User is not tweet author")
