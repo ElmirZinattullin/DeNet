@@ -1,4 +1,4 @@
-from typing import Union, Type, TypeVar
+from typing import Union, Type
 
 from sqlalchemy import select, ScalarResult
 from sqlalchemy.exc import MultipleResultsFound

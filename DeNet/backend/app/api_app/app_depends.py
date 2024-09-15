@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from fastapi import Depends, Header, HTTPException, Body
+from fastapi import Depends, Header, HTTPException
 
 from ..db import models, db_utils
 from ..db.database import AsyncSession, get_db_session

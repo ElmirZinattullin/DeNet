@@ -49,5 +49,26 @@ class StorageList(BaseModel):
 
 
 class Upload_init_out(BaseModel):
+    result: bool
     pk: int
     session: str
+
+
+class Error(BaseModel):
+    """Result of request processing"""
+
+    result: bool = Body(
+        ..., description="The status of processing", examples=[True]
+    )
+    error_type: str = Body(..., description="Error type")
+    error_message: str = Body(..., description="Error message")
+
+
+class Register(BaseModel):
+
+    name: str
+    api_key: str
+
+
+class RegisterOut(BaseModel):
+    result: bool

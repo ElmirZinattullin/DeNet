@@ -9,7 +9,6 @@ class APISettings(BaseSettings):
     database_password: str
     debug: str = "0"
     database_url: str
-    api_route: str = ""
 
 try:
     Settings = APISettings().model_dump()
@@ -21,7 +20,6 @@ DATABASE_USER = Settings.get("database_user")
 DATABASE_PASSWORD = Settings.get("database_password")
 DEBUG = bool(int(Settings.get("debug")))
 DATABASE_URL = Settings.get("database_url")
-API_ROUTE = Settings.get("api_route")
 
 if __name__ == '__main__':
     print(Settings)

@@ -20,11 +20,11 @@ def get_database():
     if DATABASE and DATABASE_USER and DATABASE_PASSWORD and DATABASE_URL:
         print(f"postgresql+asyncpg://"
             f"{DATABASE_USER}:{DATABASE_PASSWORD}"
-            f"@{DATABASE_URL}:5431/{DATABASE}")
+            f"@{DATABASE_URL}:5432/{DATABASE}")
         database_connection = (
             f"postgresql+asyncpg://"
             f"{DATABASE_USER}:{DATABASE_PASSWORD}"
-            f"@{DATABASE_URL}:5431/{DATABASE}"
+            f"@{DATABASE_URL}:5432/{DATABASE}"
         )
     else:
         raise Exception("NO FOUND ONE OR MORE ENVIRONMENTS")
