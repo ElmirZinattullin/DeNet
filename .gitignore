@@ -1,0 +1,9 @@
+venv
+.idea
+test
+/DeNet/backend/app/storage/
+/DeNet/storage/
+/DeNet/backend/nginx/storage/
+/DeNet/CLI/services/s/
+/DeNet/backend/storage/
+/DeNet/backend/data/
